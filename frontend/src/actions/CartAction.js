@@ -1,4 +1,3 @@
-
 import {
     ADD_TO_CART,
     REMOVE_CART_ITEM,
@@ -23,7 +22,7 @@ import {
       },
     });
 
-    let new_data = {
+    let new_data = {                     ///////
       productName : data.product.name,
       quantity,
       productImage : data.product.images[0].url,
@@ -36,7 +35,7 @@ import {
 
     
     const res = await axios.post('/api/v2/addToCart', new_data);
-    console.log(res);
+    //console.log(res);
     localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
   };
 

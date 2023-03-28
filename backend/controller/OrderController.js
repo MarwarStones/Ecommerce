@@ -5,11 +5,8 @@ const Product = require("../models/ProductModel");
 
 // Create Order
 exports.createOrder = catchAsyncErrors(async (req,res,next) =>{
- //console.log("createOrder", req.body);
- // var userId = req.user._id.replace("new ","");
- // console.log("userId")
 
-    const {
+    let {
         shippingInfo,
         orderItems,
         paymentInfo,
@@ -26,12 +23,16 @@ exports.createOrder = catchAsyncErrors(async (req,res,next) =>{
       t.productName = item.name;
       t.productImage = item.image;
       t.productPrice = item.price;
+      t.quantity = item.quantity;
       newOrderItems.push(t);
     })
+
+    orderItems = newOrderItems;
+    
     try{
       const order = await Order.create({
         shippingInfo,
-        newOrderItems,
+        orderItems,
         paymentInfo,
         itemsPrice,
         taxPrice,
@@ -40,18 +41,16 @@ exports.createOrder = catchAsyncErrors(async (req,res,next) =>{
         paidAt:Date.now(),
         user: req.user._id,
     });
+    res.status(201).json({
+      success: true,
+      order
+  });
     }
     catch(err){
       console.log("Error in createOrder", err)
     }
     
-
-   // console.log("Order",order);
-
-    res.status(201).json({
-        success: true,
-        order
-    });
+    
 });
 
 //  Get Single order
@@ -112,7 +111,7 @@ exports.updateAdminOrder = catchAsyncErrors(async (req, res, next) => {
   
     if (req.body.status === "Shipped") {
       order.orderItems.forEach(async (o) => {
-        await updateStock(o.product, o.quantity);
+        await updateStock(o.productId, o.quantity);
       });
     }
     order.orderStatus = req.body.status;
@@ -130,7 +129,7 @@ exports.updateAdminOrder = catchAsyncErrors(async (req, res, next) => {
   async function updateStock(id, quantity) {
       
     const product = await Product.findById(id);
-  
+    console.log(product)
     product.Stock -= quantity;
   
     await product.save({ validateBeforeSave: false });

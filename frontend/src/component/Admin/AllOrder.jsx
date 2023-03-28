@@ -109,6 +109,7 @@ const AllOrder = ({ history }) => {
 
   orders &&
     orders.forEach((item) => {
+      console.log(item)
       rows.push({
         id: item._id,
         itemsQty: item.orderItems.length,

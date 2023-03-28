@@ -69,7 +69,7 @@ const orderSchema = new mongoose.Schema({
   },
   paidAt: {
     type: Date,
-    //required: true,
+    required: true,               //////
   },
   itemsPrice: {
     type: Number,
@@ -92,7 +92,7 @@ const orderSchema = new mongoose.Schema({
   },
   orderStatus: {
     type: String,
-    //required: true,
+    required: true,                 //////
     default: "Processing",
   },
   deliveredAt: Date,

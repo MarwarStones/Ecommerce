@@ -27,7 +27,7 @@ const { product,loading } = useSelector(
             alignItems:"center",
             padding:"0px 15px"
         }}>
-            <p style={{fontSize:"1.2vmax",fontWeight:"600",padding:"2px 0   px"}}>{review.name}</p>
+            <p style={{fontSize:"1.2vmax",fontWeight:"600",padding:"2px 0px"}}>{review.name}</p>
             <p style={{paddingLeft:"8px",color:"grey"}}>{String(review.time).substr(0,10)}</p>
         </div>
           <div style={{padding:"0px 15px",paddingBottom:"5px"}}>

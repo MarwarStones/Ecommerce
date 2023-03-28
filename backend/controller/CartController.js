@@ -58,8 +58,6 @@ exports.removeWishlistData = catchAsyncErrors(async (req, res, next) => {
 
 // add To Cart
 exports.addToCart = catchAsyncErrors(async (req, res, next) => {
-  
-  console.log("Entered add to cart controller")
   const {
     productName,
     quantity,
