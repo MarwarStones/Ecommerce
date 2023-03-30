@@ -1,7 +1,7 @@
 import './App.css';
 import Home from "./component/Home/Home";
 import WebFont from "webfontloader";
-import { useEffect } from 'react';
+import { useEffect} from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ProductDetails from './component/Products/ProductDetails';
 import LoginSignup from "./component/Authentication/LoginSignup";
@@ -46,9 +46,10 @@ import ForgotPassword from "../../frontend/src/component/user/ForgotPassword";
 import ResetPassword from "../../frontend/src/component/user/ResetPassword";
 import Notfound from "../../frontend/src/more/Notfound";
 
+
 function App() {
 
-  const {isAuthenticated,user} = useSelector((state) =>state.user);
+  const {isAuthenticated,user} = useSelector((state) =>state.user)
 
   const [stripeApiKey, setStripeApiKey] = useState("");
 
@@ -71,22 +72,6 @@ function App() {
 
   }, []);
 
-  // useEffect( () => {
-
-  //   window.onload = () => {
-  //   (function(d, m){
-  //     var kommunicateSettings =
-  //         {"appId":"3d9e09f8bc8de5581f4b73f2d2f9ac40e","popupWidget":true,"automaticChatOpenOnNavigation":true};
-  //     var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
-  //     s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
-  //     var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
-  //     window.kommunicate = m; m._globals = kommunicateSettings;
-  // })(document, window.kommunicate || {});
-  //   }
-  // })
-
-    
-  
   return (
      
      <Router>

@@ -133,9 +133,6 @@ window.addEventListener("scroll", () =>{
           <Link to="/Products">
             <li>Products</li>
           </Link>
-          {/* <Link to="/creator">
-            <li>Become A Seller</li>
-          </Link> */}
           <Link to="/faq">
             <li>Users Rules</li>
           </Link>
