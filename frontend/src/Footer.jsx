@@ -15,10 +15,10 @@ const Footer = () => {
             height: "100px",
             objectFit: "contain",
             cursor: "pointer",
-            marginRight: "200px"
+            marginLeft: "2rem",
           }}
         />
-        <div className="location flex py__10" style={{color:"#F5F5DD"}}>
+        <div className="location flex py__10" style={{color:"#F5F5DD", marginLeft: "2rem"}}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -34,7 +34,7 @@ const Footer = () => {
           <h6>MBM University, Jodhpur, Rajasthan</h6>
         </div>
 
-        <div className="location flex py__10" style={{color:"#F5F5DD"}}>
+        <div className="location flex py__10" style={{color:"#F5F5DD", marginLeft: "2rem"}}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -49,7 +49,7 @@ const Footer = () => {
           <h6>marwarstoneart12@gmail.com</h6>
         </div>
 
-        <div className="location flex py__10" style={{color:"#F5F5DD"}}>
+        <div className="location flex py__10" style={{color:"#F5F5DD", marginLeft: "2rem"}}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -64,7 +64,7 @@ const Footer = () => {
           <h6>+91-7742166131, 8764213353, 7426933749</h6>
         </div>
 
-        <div className="location flex py__10" style={{color:"#F5F5DD"}}>
+        <div className="location flex py__10" style={{color:"#F5F5DD", marginLeft: "2rem"}}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -80,7 +80,7 @@ const Footer = () => {
           <h6>10:00 Am - 10:00 Pm (everyday)</h6>
         </div>
 
-        <div className="app" style={{color:"#F5F5DD"}}>
+        <div className="app" style={{color:"#F5F5DD", marginLeft: "1rem"}}>
             <div className="App__Image flex pointer">
             <Link to="/creator"><img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/app-store.jpg" style={{"width":"150px","margin":"10px"}} /></Link>
             <Link to="/creator"><img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/google-play.jpg" style={{"width":"150px","margin":"10px"}} /></Link>
